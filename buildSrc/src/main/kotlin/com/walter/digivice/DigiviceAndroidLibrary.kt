@@ -1,11 +1,11 @@
 package com.walter.digivice
 
+import com.walter.digivice.config.implementCoil
 import com.walter.digivice.config.implementHilt
 import com.walter.digivice.config.implementJetpack
 import com.walter.digivice.config.implementKtor
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.dependencies
 
 class DigiviceAndroidLibrary : Plugin<Project> {
 
@@ -15,6 +15,7 @@ class DigiviceAndroidLibrary : Plugin<Project> {
             implementKtor()
             implementHilt()
             implementJetpack()
+            implementCoil()
         }
     }
 
