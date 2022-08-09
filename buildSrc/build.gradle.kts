@@ -6,11 +6,6 @@ plugins {
     `java-gradle-plugin`
 }
 
-dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
-    implementation("com.android.tools.build:gradle:7.1.3")
-}
-
 gradlePlugin {
     plugins{
         register("digivice.android.library") {
