@@ -1,7 +1,5 @@
 package com.walter.digivice.utils
 
-import org.gradle.api.Project
-import org.gradle.api.plugins.BasePluginExtension
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 
 fun DependencyHandlerScope.implementation(library: String){
@@ -20,8 +18,8 @@ fun DependencyHandlerScope.kapt(library: String) {
     add("kapt" ,library)
 }
 
-fun Project.androidExtension(lambda: BasePluginExtension.() -> Unit){
-    with(extensions.getByName("android")){
-        
-    }
-}
+//fun Project.androidExtension(lambda: BaseExtension.() -> Unit){
+//    with(extensions.getByName("android")){
+//
+//    }
+//}
