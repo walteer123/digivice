@@ -37,8 +37,6 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
-    implementation ("io.coil-kt:coil:2.1.0")
-    implementation("io.coil-kt:coil-compose:2.1.0")
     implementation(project(":network"))
 
 }

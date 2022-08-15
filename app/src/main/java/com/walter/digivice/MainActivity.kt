@@ -10,7 +10,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.walter.digivice.digimons.presentation.DigimonsListScreen
+import com.walter.digivice.navigation.Destinations
 import com.walter.digivice.ui.theme.DigiviceTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,15 +24,25 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            DigiviceTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    DigimonsListScreen()
-                }
+            val navController = rememberNavController()
+
+            NavHost(navController = navController, startDestination = Destinations.home) {
+                composable(Destinations.home) { Home() }
+                composable(Destinations.digimonDetails) {  }
             }
+        }
+    }
+}
+
+@Composable
+fun Home() {
+    DigiviceTheme {
+        // A surface container using the 'background' color from the theme
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colors.background
+        ) {
+            DigimonsListScreen()
         }
     }
 }
